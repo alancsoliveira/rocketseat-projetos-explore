@@ -38,4 +38,4 @@ function calcIMC(weight, height) {
 
 for (let patient of patients) {
   alert(`O IMC de ${patient.name} é ${calcIMC(patient.weight, patient.height)}`)
-}
+} 
