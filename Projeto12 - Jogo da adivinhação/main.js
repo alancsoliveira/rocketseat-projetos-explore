@@ -1,27 +1,35 @@
+const screen1 = document.querySelector(".screen1")
+const screen2 = document.querySelector(".screen2")
+const btnTry = document.querySelector("#btnTry")
+const btnReset = document.querySelector("#btnReset")
+let attempts = 1
+let randomNumber = getRandom(100);
+
+//Eventos
+btnTry.addEventListener("click", handleTryClick)
+btnReset.addEventListener("click", handleResetClick)
+
+document.addEventListener("keydown", function (e) {
+  if (e.key == 'Enter' && screen1.classList.contains("hide")) {
+    handleResetClick()
+  }
+})
+
+
+// Funções
 function getRandom(max) {
   let result = Math.floor(Math.random() * (max + 1))
   console.log(result)
   return result
 }
 
-
-const screen1 = document.querySelector(".screen1")
-const screen2 = document.querySelector(".screen2")
-
-let attempts = 1
-let randomNumber = getRandom(100);
-
-
-// Função Callback
 function handleTryClick(event) {
   event.preventDefault()
 
   const inputNumber = document.querySelector("#inputNumber")
 
   if (Number(inputNumber.value) == randomNumber) {
-    screen1.classList.add("hide")
-    screen2.classList.remove("hide")
-
+    toggleScreen()
     if (attempts == 1) document.querySelector(".screen2 h2").innerText = (`Acertou "de primeira"`);
     else document.querySelector(".screen2 h2").innerText = (`Acertou em ${attempts} tentativas`);
 
@@ -39,15 +47,14 @@ function handleTryClick(event) {
 }
 
 
-//Eventos
-const btnTry = document.querySelector("#btnTry")
-const btnReset = document.querySelector("#btnReset")
-
-
-btnTry.addEventListener("click", handleTryClick)
-btnReset.addEventListener("click", function () {
-  screen1.classList.remove("hide")
-  screen2.classList.add("hide")
+function handleResetClick() {
+  toggleScreen()
+  randomNumber = getRandom(100)
   attempts = 1
-  getRandom(100)
-})
+}
+
+function toggleScreen() {
+  screen1.classList.toggle("hide")
+  screen2.classList.toggle("hide")
+
+}
