@@ -1,0 +1,143 @@
+@keyframes gradient {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
+}
+
+.hide {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 6.25%;
+
+}
+
+body {
+  background: linear-gradient(45deg, #190361, #bb00ff);
+  font-size: 16rem;
+
+  animation: gradient 10s ease infinite;
+  background-size: 200% 200%;
+
+
+  /* Dica quente. Centralizar ao meio */
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+}
+
+main {
+
+  margin-top: -120rem;
+
+  background-color: #FFFFFF;
+  box-shadow: 0rem 20px 50px rgba(0, 0, 0, 0.8);
+  border-radius: 5rem;
+
+}
+
+h1 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24rem;
+  line-height: 29rem;
+  text-align: center;
+
+  color: #34355B;
+
+  margin-bottom: 14rem;
+
+}
+
+p {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15rem;
+  line-height: 20rem;
+  text-align: center;
+
+  color: #34355B;
+
+  margin-bottom: 20rem;
+
+}
+
+.luck {
+  background: #E4EDF1;
+  width: 293rem;
+  height: 107rem;
+
+  margin-bottom: 17rem;
+}
+
+.screen1 {
+  padding: 48rem 64rem 64rem 64rem;
+  width: 428rem;
+  height: 424rem;
+
+}
+
+.screen2 {
+  padding: 48rem 64rem 64rem 64rem;
+
+  width: 428rem;
+  height: 564rem;
+}
+
+.fortune-cookie{
+  width: 300rem;
+  height: 200rem;
+  border: 1px solid red;
+  display: flex;
+justify-content: center;
+}
+
+.screen1 .fortune-cookie img {
+  width: 248rem;
+  height: 191rem;
+  border: 1px solid blue;
+}
+
+.screen2 img {
+  width: 300rem;
+  height: 115rem;
+}
+
+button {
+  margin: 17rem auto 0;
+
+  width: 174rem;
+  height: 52rem;
+
+  background: #FF9500;
+  border-radius: 4px;
+  border-style: none;
+
+}
+
+button p {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15rem;
+  line-height: 20rem;
+
+  color: #FFFFFF;
+  margin-bottom: 0;
+}
