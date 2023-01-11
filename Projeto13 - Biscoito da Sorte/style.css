@@ -1,13 +1,15 @@
 @keyframes gradient {
-0% {
-  background-position: 0% 50%;
-}
-50% {
-  background-position: 100% 50%;
-}
-100% {
-  background-position: 0% 50%;
-}
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .hide {
@@ -37,12 +39,11 @@ body {
   display: grid;
   place-items: center;
   height: 100vh;
-
 }
 
 main {
 
-  margin-top: -120rem;
+  margin-top: -80rem;
 
   background-color: #FFFFFF;
   box-shadow: 0rem 20px 50px rgba(0, 0, 0, 0.8);
@@ -78,12 +79,50 @@ p {
 
 }
 
+
+
+@keyframes downUp {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+
+  }
+}
+
+
 .luck {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  min-width: 293rem;
+  min-height: 107rem;
+
   background: #E4EDF1;
-  width: 293rem;
-  height: 107rem;
+  box-shadow: 2rem 2rem 2rem rgba(85, 85, 85, 0.5);
 
   margin-bottom: 17rem;
+
+  transform: scale(1);
+  animation: downUp 2s ;
+
+}
+
+.luck p {
+  margin: 0;
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24rem;
+  line-height: 29rem;
+  text-align: center;
 }
 
 .screen1 {
@@ -95,23 +134,54 @@ p {
 
 .screen2 {
   padding: 48rem 64rem 64rem 64rem;
-
   width: 428rem;
-  height: 564rem;
+  min-height: 564rem;
 }
 
-.fortune-cookie{
+.fortune-cookie {
+  cursor: pointer;
   width: 300rem;
   height: 200rem;
-  border: 1px solid red;
   display: flex;
-justify-content: center;
+  justify-content: center;
+}
+
+@keyframes openCookie {
+  0% {
+    transform: rotate(2deg);
+  }
+
+  25% {
+    transform: rotate(-2deg);
+  }
+
+  75% {
+    transform: translateX(-2rem);
+  }
+
+  100% {
+    transform: translateX(2rem);
+  }
+}
+
+.fortune-cookie:hover {
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: openCookie 150ms infinite;
+  /* animation: openCookie 100ms infinite 300ms; */
+
+}
+
+.opened-cookie {
+  width: 300rem;
+  height: 200rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .screen1 .fortune-cookie img {
   width: 248rem;
   height: 191rem;
-  border: 1px solid blue;
 }
 
 .screen2 img {
@@ -119,7 +189,7 @@ justify-content: center;
   height: 115rem;
 }
 
-button {
+#reset {
   margin: 17rem auto 0;
 
   width: 174rem;
@@ -129,15 +199,25 @@ button {
   border-radius: 4px;
   border-style: none;
 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: 80ms;
 }
 
-button p {
+#reset:hover {
+  cursor: pointer;
+  opacity: 0.8;
+
+}
+
+#reset p {
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 15rem;
   line-height: 20rem;
-
   color: #FFFFFF;
   margin-bottom: 0;
 }
