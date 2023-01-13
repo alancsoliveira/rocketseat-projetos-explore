@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 6.25%;
+}
+
+body{
+  background-color: #040924;
+  font-size: 16rem;
+}
+
+/* centralizar o cartão */
+.container{
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.card{
+  padding: 48rem 64rem 64rem;
+  background-color: white;
+  max-width: 428rem;
+  margin-inline: auto;
+}
