@@ -7,12 +7,19 @@ const modalWrapper = document.querySelector(".modal-wrapper")
 const modalMessage = document.querySelector(".modal .title span")
 const modalBtnClose = document.querySelector(".modal button.close")
 
-// const Modal = {
-//   open: function(){},
-// }
+const Modal = {
+  open() {
+    console.log("open")
+  },
+  close() {
+    console.log("close")
+  },
+}
+
+Modal.close()
 
 calcIMC = (weight, height) => {
-  let IMC = weight / ((height / 100) ** 2)
+  let IMC = weight / (height / 100) ** 2
   return IMC.toFixed(2)
 }
 
@@ -23,7 +30,6 @@ handleModalToggle = () => {
 handleModalClose = () => {
   modalWrapper.classList.remove("open")
 }
-
 
 form.onsubmit = (event) => {
   event.preventDefault()
@@ -39,5 +45,3 @@ form.onsubmit = (event) => {
 }
 
 modalBtnClose.addEventListener("click", handleModalClose)
-
-
