@@ -32,14 +32,20 @@ body {
 .set svg path {
   fill: var(--primary-color);
 }
+
+button svg {
+  width: clamp(32rem, 20rem + 12vw, 64rem);
+}
+
 #timer {
-  font-size: 88rem;
+  font-size: clamp(40rem, 40rem + 10vw, 88rem);
   display: flex;
 }
 
 button {
   border: none;
   background-color: transparent;
+
   cursor: pointer;
 }
 
@@ -48,6 +54,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 32rem;
 
   border-radius: 9999px;
+
+  width: clamp(100rem, 100rem + 30vw, 220rem);
+  height: clamp(80rem, 50rem + 10vh, 108rem);
 }
