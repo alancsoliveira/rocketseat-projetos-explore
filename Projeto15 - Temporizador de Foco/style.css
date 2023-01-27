@@ -20,6 +20,13 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: "Roboto", "sans-serif";
+  display: grid;
+  min-height: 100vh;
+}
+
+main {
+  justify-self: center;
+  align-self: end;
 }
 
 .hide {
@@ -27,9 +34,7 @@ body {
 }
 .play svg path,
 .pause svg path,
-.sound-on svg path,
-.sound-off svg path,
-.set svg path {
+.sound-on svg path {
   fill: var(--primary-color);
 }
 
@@ -40,6 +45,8 @@ button svg {
 #timer {
   font-size: clamp(40rem, 40rem + 10vw, 88rem);
   display: flex;
+
+  margin-bottom: 16rem;
 }
 
 button {
@@ -60,4 +67,11 @@ button {
 
   width: clamp(100rem, 100rem + 30vw, 220rem);
   height: clamp(80rem, 50rem + 10vh, 108rem);
+}
+
+footer {
+  justify-self: end;
+  align-self: end;
+
+  padding: 0 40rem 32rem 0;
 }
